@@ -38,7 +38,7 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
             let solveData;
 
             if(localStorage.speedtimer != null) {
-                solveData = localStorage.speedtimer;
+                solveData = localStorage.getItem("speedtimer");
             } else {
                 solveData = JSON.stringify([]);
             }

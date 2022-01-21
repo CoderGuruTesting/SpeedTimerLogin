@@ -5,13 +5,13 @@ if (innerWidth > 1000) {
 	document.querySelector(".digits").style.fontSize = localStorage.digitSize != null ? temp.toString() + "vw" : "15vw";
 }
 
-if (localStorage.buttonbg == null) localStorage.setItem("buttonbg", "#323232");
-if (localStorage.algImgCol == null) localStorage.setItem("algImgCol", "#dba204");
-if (localStorage.buttonbg != null) document.body.style.setProperty("--buttonbg", localStorage.buttonbg);
-if (localStorage.algImgCol != null) document.body.style.setProperty("--algImgCol", localStorage.algImgCol);
-if (localStorage.wcaInspec == null) localStorage.setItem("wcaInspec", JSON.stringify(false));
-if (localStorage.d3vis == null) localStorage.setItem("d3vis", JSON.stringify(false));
-if (localStorage.stackmat == null) localStorage.setItem("stackmat", JSON.stringify(false));
+if (localStorage.getItem("buttonbg") == null) localStorage.setItem("buttonbg", "#323232");
+if (localStorage.getItem("algImgCol") == null) localStorage.setItem("algImgCol", "#dba204");
+if (localStorage.getItem("buttonbg") != null) document.body.style.setProperty("--buttonbg", localStorage.buttonbg);
+if (localStorage.getItem("algImgCol") != null) document.body.style.setProperty("--algImgCol", localStorage.algImgCol);
+if (localStorage.getItem("wcaInspec") == null) localStorage.setItem("wcaInspec", JSON.stringify(false));
+if (localStorage.getItem("d3vis") == null) localStorage.setItem("d3vis", JSON.stringify(false));
+if (localStorage.getItem("stackmat") == null) localStorage.setItem("stackmat", JSON.stringify(false));
 
 if (localStorage.getItem("borderView") != null) {
 	var ticked = JSON.parse(localStorage.getItem("borderView"));

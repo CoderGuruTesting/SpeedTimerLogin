@@ -11,12 +11,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function writeUserData(googleProfile, userId, name, email, imageUrl) {
-    firebase.database().ref('users/' + userId).set({
-        username: name,
-        email: email,
-        profile_picture: imageUrl,
-    });
-
     var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
         if (snapshot.exists()) {
             // Stuff
@@ -27,6 +21,12 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
                 speedtimerData: solveData
             });
         }
+    });
+
+    firebase.database().ref('users/' + userId).set({
+        username: name,
+        email: email,
+        profile_picture: imageUrl,
     });
 }
 

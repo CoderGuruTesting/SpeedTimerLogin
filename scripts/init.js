@@ -13,7 +13,7 @@ firebase.initializeApp(firebaseConfig);
 function writeUserData(googleProfile, userId, name, email, imageUrl) {
     var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
         if (snapshot.exists()) {
-            // Stuff
+            console.log("exists");
         } else {
             let solveData = localStorage.speedtimer !== null ? localStorage.speedtimer : "[]";
 

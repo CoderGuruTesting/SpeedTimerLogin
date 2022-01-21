@@ -9,7 +9,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-function writeUserData(userId, name, email, imageUrl) {
+function writeUserData(googleProfile, userId, name, email, imageUrl) {
     firebase.database().ref('users/' + userId).set({
         username: name,
         email: email,
@@ -59,5 +59,5 @@ function onSignIn(googleUser) {
 function afterSignIn(userProfile) {
     var googleProfile = userProfile;
 
-    writeUserData(googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
+    writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 }

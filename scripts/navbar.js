@@ -16,13 +16,13 @@ text.innerHTML = "SpeedTimer";
 
 leftT.appendChild(text);
 
-var login = document.createElement("span");
-// login.classList.add("loginBtn");
-login.classList.add("g-signin2");
-login.dataOnsuccess = "onSignIn";
-login.innerHTML = '<span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="120" data-height="35"></span>';
+// var login = document.createElement("span");
+// // login.classList.add("loginBtn");
+// login.classList.add("g-signin2");
+// login.dataOnsuccess = "onSignIn";
+// login.innerHTML = '<span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="120" data-height="35"></span>';
 
-leftT.appendChild(login);
+leftT.appendChild(<span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="120" data-height="35"></span>);
 
 var div = document.createElement("div");
 div.style.flex = "2";

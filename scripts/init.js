@@ -15,23 +15,24 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
         username: name,
         email: email,
         profile_picture: imageUrl,
-        userString: "new user string"
     });
 
     var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
         if (snapshot.exists()) {
             // Stuff
         } else {
+            let solveData = localStorage.speedtimer !== null ? localStorage.speedtimer : "[]";
+
             firebase.database().ref('users/' + userId).set({
-                userString: "new user string"
+                speedtimerData: solveData
             });
         }
     });
 }
 
-function setSpecialString(userId, specialString) {
+function setSpeedtimerData(userId, data) {
     firebase.database().ref('users/' + userId).update({
-        userString: specialString
+        speedtimerData: data
     });
 }
 

@@ -16,7 +16,8 @@ text.innerHTML = "SpeedTimer";
 
 leftT.appendChild(text);
 
-// var login = document.createElement("span");
+var login = document.createElement("span");
+console.log(login);
 // // login.classList.add("loginBtn");
 // login.classList.add("g-signin2");
 // login.dataOnsuccess = "onSignIn";

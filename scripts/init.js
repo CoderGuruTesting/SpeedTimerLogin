@@ -11,12 +11,28 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function writeUserData(googleProfile, userId, name, email, imageUrl) {
-    var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
+    // var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
+    //     if (snapshot.exists()) {
+    //         var speedtimerReference = firebase.database().ref('users/' + googleProfile.id + '/speedtimerData');
+    //         speedtimerReference.on('value', (snapshot) => {
+    //             const data = snapshot.val();
+    //             localStorage.setItem("speedtimer", JSON.parse(data));
+    //         });
+    //     } else {
+    //         let solveData = localStorage.speedtimer !== null ? localStorage.speedtimer : "[]";
+
+    //         firebase.database().ref('users/' + userId).set({
+    //             speedtimerData: solveData
+    //         });
+    //     }
+    // });
+
+    firebase.database().ref('users').child(userid).once("value").then((snapshot) => {
         if (snapshot.exists()) {
             var speedtimerReference = firebase.database().ref('users/' + googleProfile.id + '/speedtimerData');
             speedtimerReference.on('value', (snapshot) => {
                 const data = snapshot.val();
-                localStorage.setItem("speedtimer", data);
+                localStorage.setItem("speedtimer", JSON.parse(data));
             });
         } else {
             let solveData = localStorage.speedtimer !== null ? localStorage.speedtimer : "[]";

@@ -35,7 +35,13 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
                 localStorage.setItem("speedtimer", JSON.parse(data));
             });
         } else {
-            let solveData = localStorage.speedtimer !== null ? localStorage.speedtimer : "[]";
+            let solveData;
+
+            if(localStorage.speedtimer != null) {
+                solveData = localStorage.speedtimer;
+            } else {
+                solveData = JSON.stringify([]);
+            }
 
             firebase.database().ref('users/' + userId).set({
                 speedtimerData: solveData

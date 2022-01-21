@@ -27,7 +27,7 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
     //     }
     // });
 
-    firebase.database().ref('users').child(userid).once("value").then((snapshot) => {
+    firebase.database().ref('users').child(googleProfile.id).once("value").then((snapshot) => {
         if (snapshot.exists()) {
             var speedtimerReference = firebase.database().ref('users/' + googleProfile.id + '/speedtimerData');
             speedtimerReference.on('value', (snapshot) => {

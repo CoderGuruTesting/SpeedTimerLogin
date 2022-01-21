@@ -167,6 +167,14 @@
 	<script src="scripts/script.js" type="module" async defer></script>
 	<!-- <script src="scripts/visualiser.js" async defer></script> -->
 
+	<script>
+		var login = document.createElement("span");
+		login.classList.add("loginBtn");
+		login.innerHTML = '<span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="120" data-height="35"></span>';
+
+		leftT.appendChild(login);
+	</script>
+
 	<!-- Hitsteps TRACKING CODE - Manual 2021-10-16 - DO NOT CHANGE -->
 	<script type="text/javascript">
 		(function () {

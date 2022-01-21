@@ -16,6 +16,16 @@ function writeUserData(userId, name, email, imageUrl) {
         profile_picture: imageUrl,
         userString: "new user string"
     });
+
+    var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
+        if (snapshot.exists()) {
+            // Stuff
+        } else {
+            firebase.database().ref('users/' + userId).set({
+                userString: "new user string"
+            });
+        }
+    });
 }
 
 function setSpecialString(userId, specialString) {
@@ -49,16 +59,5 @@ function onSignIn(googleUser) {
 function afterSignIn(userProfile) {
     var googleProfile = userProfile;
 
-    var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
-        if (snapshot.exists()) {
-            let userData, userSpecialString;
-
-            firebase.database().ref("users/" + googleProfile.id).on("value", (snap) => {
-                userData = snap.val();
-                userSpecialString = userData.userString;
-            });
-        } else {
-            writeUserData(googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
-        }
-    });
+    writeUserData(googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 }

@@ -22,7 +22,7 @@ leftT.appendChild(text);
 // login.dataOnsuccess = "onSignIn";
 // login.innerHTML = '<span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="120" data-height="35"></span>';
 
-var login = `<span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="120" data-height="35"></span>`;
+var login = document.querySelector(".dataStore").innerHTML;
 
 leftT.appendChild(login);
 

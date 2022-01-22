@@ -1,5 +1,5 @@
 document.querySelector(".leftT").innerHTML =
-    '<div class="logo"><img src="images/logo1.jpg"></div><div class="text">SpeedTimer</div><div class = "loginUser"><span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="120" data-height="35"></span></div><div class = "userDetails"></div><div style="flex: 2 1 0%; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;"><div><a class="link" href="index.html" id="timer"><i class="fas fa-stopwatch"></i>&nbsp;<span>Timer</span></a></div><div><a class="link" href="sessions.html" id="sessions"><i class="fas fa-list"></i>&nbsp;<span>Sessions</span></a></div><div><a class="link" href="algs-3-oll.html" id="algorithms"><i class="fas fa-th"></i>&nbsp;<span>Algorithms</span></a></div><div><a class="link" href="cubeslist.html" id="cubeslist"><i class="fas fa-cube"></i>&nbsp;<span>Cubeslist</span></a></div><div><a class="link" href="tools.html" id="tools"><i class="fas fa-tools"></i>&nbsp;<span>Tools</span></a></div><div><a class="link" href="games.html" id="games"><i class="fas fa-gamepad"></i>&nbsp;<span>Games</span></a></div><div><a class="link" href="settings.html" id="settings"><i class="fas fa-cog"></i>&nbsp;<span>Settings</span></a></div></div><div class="lastPart"><div><span><button class="credits" onclick="credits()" id="info"><i class="fas fa-question"></i></button></span><a class="infoBtn" href="info.html" target="_blank"><i class="fas fa-info"></i></a><a class="infoBtn" href="updates.html" target="_blank"><i class="fas fa-bell"></i></a></div><div><button class="collapse" onclick="collapse()" style="display: flex;"><i id="col" class="fas fa-angle-left"></i></button></div></div>';
+    '<div class="logo"><img src="images/logo1.jpg"></div><div class="text">SpeedTimer</div><div class = "loginUser" loggedout><span class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-width="120" data-height="35"></span></div><div class = "userDetails"><div class = "userImg"></div><div class = "userName">Name</div></div><div style="flex: 2 1 0%; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;"><div><a class="link" href="index.html" id="timer"><i class="fas fa-stopwatch"></i>&nbsp;<span>Timer</span></a></div><div><a class="link" href="sessions.html" id="sessions"><i class="fas fa-list"></i>&nbsp;<span>Sessions</span></a></div><div><a class="link" href="algs-3-oll.html" id="algorithms"><i class="fas fa-th"></i>&nbsp;<span>Algorithms</span></a></div><div><a class="link" href="cubeslist.html" id="cubeslist"><i class="fas fa-cube"></i>&nbsp;<span>Cubeslist</span></a></div><div><a class="link" href="tools.html" id="tools"><i class="fas fa-tools"></i>&nbsp;<span>Tools</span></a></div><div><a class="link" href="games.html" id="games"><i class="fas fa-gamepad"></i>&nbsp;<span>Games</span></a></div><div><a class="link" href="settings.html" id="settings"><i class="fas fa-cog"></i>&nbsp;<span>Settings</span></a></div></div><div class="lastPart"><div><span><button class="credits" onclick="credits()" id="info"><i class="fas fa-question"></i></button></span><a class="infoBtn" href="info.html" target="_blank"><i class="fas fa-info"></i></a><a class="infoBtn" href="updates.html" target="_blank"><i class="fas fa-bell"></i></a></div><div><button class="collapse" onclick="collapse()" style="display: flex;"><i id="col" class="fas fa-angle-left"></i></button></div></div>';
 
 const firebaseConfig = {
     apiKey: "AIzaSyDqcNp6emfuSO6NI02XqVieQqjXLQInZ4I",
@@ -73,15 +73,26 @@ function onSignIn(googleUser) {
     afterSignIn(userEntity);
 }
 
-// document.getElementById("signoutLink").addEventListener("click", function signOut() {
-//     var auth2 = gapi.auth2.getAuthInstance();
-//     auth2.signOut().then(function () {
-//         localStorage.removeItem("myUserEntity");
-//     });
-// });
+//document.getElementById("signoutLink").addEventListener("click", 
+function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+        localStorage.removeItem("myUserEntity");
+    });
+
+    document.querySelector(".loginUser").classList.remove("loggedin");
+    document.querySelector(".loginUser").classList.add("loggedout");
+};
 
 function afterSignIn(userProfile) {
     var googleProfile = userProfile;
+
+    document.querySelector(".loginUser").classList.remove("loggedout");
+    document.querySelector(".loginUser").classList.add("loggedin");
+
+    document.querySelector(".userImg").style.backgroundImg = "url('" + googleProfile.profile_picture + "')";
+    
+    document.querySelector(".userName").innerHTML = googleProfile.name;
 
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 

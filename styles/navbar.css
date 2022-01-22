@@ -176,6 +176,32 @@
     margin: 10px;
 }
 
-.loginUser {
+.loginUser.loggedin {
     display: none;
+}
+
+.loginUser.loggedout {
+    display: block;
+}
+
+.userDetails {
+    display: flex;
+    align-items: center;
+
+    margin: 10px;
+}
+
+.userImg {
+    width: 40px;
+    height: 40px;
+
+    background-color: aliceblue;
+    
+    border-radius: 20px;
+}
+
+.userName {
+    margin-left: 10px;
+
+    font-size: 18px;
 }

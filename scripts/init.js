@@ -60,9 +60,18 @@ function setSpeedtimerData(userId, data) {
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
 
+    var userEntity = {
+        id: profile.getId(),
+        username: profile.getName(),
+        email: profile.getEmail(),
+        profile_picture: profile.getImageUrl(),
+    };
+
+    localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
+
     localStorage.setItem("signedIn", JSON.stringify(true));
 
-    afterSignIn(profile);
+    afterSignIn(googleUser.getBasicProfile());
 }
 
 //document.getElementById("signoutLink").addEventListener("click", 
@@ -89,23 +98,14 @@ function afterSignIn(userProfile) {
 
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 
-    var userEntity = {
-        id: userProfile.getId(),
-        username: userProfile.getName(),
-        email: userProfile.getEmail(),
-        profile_picture: userProfile.getImageUrl(),
-    };
-
-    localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
-
-    localStorage['firstLoad'] = userEntity.id;
+    localStorage['firstLoad'] = userProfile.id;
 
     if (!localStorage.getItem('firstLoad')) {
         window.location.reload();
     } else {
-        if(userEntity.id != localStorage.getItem('firstLoad')) {
+        if(userProfile.id != localStorage.getItem('firstLoad')) {
             window.location.reload();
-            localStorage['firstLoad'] = userEntity.id;
+            localStorage['firstLoad'] = userProfile.id;
         }
     }
 }

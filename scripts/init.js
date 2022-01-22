@@ -31,7 +31,6 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
             var speedtimerReference = firebase.database().ref('users/' + googleProfile.id + '/speedtimerData');
             speedtimerReference.on('value', (snapshot) => {
                 const data = snapshot.val();
-                alert(data)
                 localStorage.setItem("speedtimer", JSON.parse(data));
             });
         } else {

@@ -67,6 +67,9 @@ function onSignIn(googleUser) {
     localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
     localStorage.setItem("signedIn", JSON.stringify(true));
 
+    generateTimes();
+	generateStats();
+
     afterSignIn(userEntity);
 }
 

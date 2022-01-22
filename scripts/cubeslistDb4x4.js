@@ -8,7 +8,7 @@ var cubesFour = [
         Price: "$19.99",
         Rating: "9/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/yj-mgc-4x4x4?variant=32279439900750/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/yjmgc4.jpeg')
+        Img: "cubeslist/yjmgc4.jpeg"
     },
     {
         Name: "GAN 460",
@@ -19,7 +19,7 @@ var cubesFour = [
         Price: "$55.99",
         Rating: "6/10",
         Link: "none",
-        Img: storageRef.child('cubeslist/gan460.jpeg')
+        Img: "cubeslist/gan460.jpeg"
     },
     {
         Name: "MoYu AoSu GTS2 M",
@@ -30,7 +30,7 @@ var cubesFour = [
         Price: "$29.99",
         Rating: "8/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/moyu-aosu-gts2m/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/gts24.jpeg')
+        Img: "cubeslist/gts24.jpeg"
     },
     {
         Name: "MoYu Aosu WR M",
@@ -41,7 +41,7 @@ var cubesFour = [
         Price: "$42.99",
         Rating: "8/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/moyu-aosu-wrm/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/aosu.jpeg')
+        Img: "cubeslist/aosu.jpeg"
     },
     {
         Name: "MoYu RS4M",
@@ -52,7 +52,7 @@ var cubesFour = [
         Price: "$14.99",
         Rating: "5/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/moyu-rs4m/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/rs4m.jpeg')
+        Img: "cubeslist/rs4m.jpeg"
     },
     {
         Name: "Qiyi MS",
@@ -63,7 +63,8 @@ var cubesFour = [
         Price: "$11.99",
         Rating: "6/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/qiyi-ms-4x4x4-black/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/qiyims4"')    },
+        Img: "cubeslist/qiyims4"
+    },
     {
         Name: "Qiyi Qiyuan",
         Weight: "148g",
@@ -73,7 +74,7 @@ var cubesFour = [
         Price: "$7.99",
         Rating: "5/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/qiyi-qiyuan-s2/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/qiyuan.jpeg')
+        Img: "cubeslist/qiyuan.jpeg"
     },
     {
         Name: "Qiyi Qiyuan S",
@@ -84,7 +85,7 @@ var cubesFour = [
         Price: "$7.99",
         Rating: "5/10",
         Link: "none",
-        Img: storageRef.child('cubeslist/qiyuans.jpeg')
+        Img: "cubeslist/qiyuans.jpeg"
     },
     {
         Name: "Qiyi Qiyuan S V2",
@@ -95,7 +96,7 @@ var cubesFour = [
         Price: "$6.99",
         Rating: "6/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/qiyi-qiyuan-s2/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/qiyuansv2.jpeg')
+        Img: "cubeslist/qiyuansv2.jpeg"
     },
     {
         Name: "Qiyi Valk",
@@ -106,7 +107,7 @@ var cubesFour = [
         Price: "$39.99",
         Rating: "7/10",
         Link: "none",
-        Img: storageRef.child('cubeslist/valk4.jpeg')
+        Img: "cubeslist/valk4.jpeg"
     },
     {
         Name: "YJ YuSu",
@@ -117,7 +118,7 @@ var cubesFour = [
         Price: "$8.99",
         Rating: "4/10",
         Link: "none",
-        Img: storageRef.child('cubeslist/yusu.jpeg')
+        Img: "cubeslist/yusu.jpeg"
     },
     {
         Name: "YJ YuSu V2",
@@ -128,7 +129,7 @@ var cubesFour = [
         Price: "$11.99",
         Rating: "7/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/yj-yusu-v2m/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/yusuv2.jpeg')
+        Img: "cubeslist/yusuv2.jpeg"
     },
     {
         Name: "YJ Zhilong Mini",
@@ -139,7 +140,7 @@ var cubesFour = [
         Price: "$11.99",
         Rating: "8/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/yj-zhilong-m-mini-4x4x4/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/zhilong4.jpeg')
+        Img: "cubeslist/zhilong4.jpeg"
     },
     {
         Name: "Yuxin Little Magic",
@@ -150,7 +151,7 @@ var cubesFour = [
         Price: "$9.99",
         Rating: "7/10",
         Link: "none",
-        Img: storageRef.child('cubeslist/lm4.jpeg')
+        Img: "cubeslist/lm4.jpeg"
     },
     {
         Name: "X-Man Ambition M",
@@ -161,7 +162,7 @@ var cubesFour = [
         Price: "$29.99",
         Rating: "9/10",
         Link: "https://speedcubing.org/collections/4x4x4/products/qiyi-x-man-ambition-4x4x4/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: storageRef.child('cubeslist/xmanambition.jpeg')
+        Img: "cubeslist/xmanambition.jpeg"
     },
 ];
 

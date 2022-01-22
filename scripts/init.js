@@ -98,12 +98,12 @@ function afterSignIn(userProfile) {
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 
     if (!localStorage.getItem('firstLoad')) {
+        localStorage['firstLoad'] = userProfile.id;
+
         window.location.reload();
-    } else {
-        if(userProfile.id != localStorage.getItem('firstLoad')) {
-            window.location.reload();
-            localStorage['firstLoad'] = userProfile.id;
-        }
+    } else if(userProfile.id != localStorage.getItem('firstLoad')) {
+        window.location.reload();
+        localStorage['firstLoad'] = userProfile.id;
     }  
 }
 

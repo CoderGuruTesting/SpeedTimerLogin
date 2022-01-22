@@ -87,6 +87,15 @@ function signOut() {
 };
 
 function afterSignIn(userProfile) {
+    if (!localStorage.getItem('firstLoad')) {
+        localStorage['firstLoad'] = userProfile.id;
+
+        window.location.reload();
+    } else if(userProfile.id != localStorage.getItem('firstLoad')) {
+        window.location.reload();
+        localStorage['firstLoad'] = userProfile.id;
+    }
+
     var googleProfile = userProfile;
 
     document.querySelector(".loginUser").classList.remove("loggedout");
@@ -99,16 +108,7 @@ function afterSignIn(userProfile) {
 
     document.querySelector(".userName").innerHTML = googleProfile.username;
 
-    writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
-
-    if (!localStorage.getItem('firstLoad')) {
-        localStorage['firstLoad'] = userProfile.id;
-
-        window.location.reload();
-    } else if(userProfile.id != localStorage.getItem('firstLoad')) {
-        window.location.reload();
-        localStorage['firstLoad'] = userProfile.id;
-    }  
+    writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);  
 }
 
 var script = document.createElement('script');

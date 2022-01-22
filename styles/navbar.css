@@ -176,6 +176,10 @@
     margin: 10px;
 }
 
+.loginuser {
+    margin-top: 10px;
+}
+
 .loginUser.loggedin {
     display: none;
 }
@@ -189,6 +193,8 @@
     align-items: center;
 
     margin: 10px;
+
+    margin-bottom: 15px;
 }
 
 .userImg {

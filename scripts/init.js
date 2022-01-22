@@ -73,11 +73,6 @@ function onSignIn(googleUser) {
     afterSignIn(userEntity);
 }
 
-document.querySelector(".g-signin2").addEventListener("click", function generateUserdata() {
-    generateTimes();
-    generateStats();
-});
-
 // document.getElementById("signoutLink").addEventListener("click", function signOut() {
 //     var auth2 = gapi.auth2.getAuthInstance();
 //     auth2.signOut().then(function () {
@@ -96,3 +91,8 @@ script.src = "scripts/script.js";
 script.async = true;
 script.type = "module";
 document.body.appendChild(script);
+
+document.querySelector(".g-signin2").addEventListener("click", function generateUserdata() {
+    generateTimes();
+    generateStats();
+});

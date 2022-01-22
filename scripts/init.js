@@ -34,7 +34,7 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
                 localStorage.setItem("speedtimer", JSON.stringify(JSON.parse(data)));
             });
         } else {
-            if(localStorage.getItem("speedtimer") != null) {
+            if(localStorage.getItem("speedtimer") != null && localStorage.getItem("signedIn") != true) {
                 userSolveData = JSON.parse(localStorage.getItem("speedtimer"));
             }
 
@@ -67,10 +67,12 @@ function onSignIn(googleUser) {
     localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
     localStorage.setItem("signedIn", JSON.stringify(true));
 
+    afterSignIn(userEntity);
+}
+
+function generateUserdata() {
     generateTimes();
 	generateStats();
-
-    afterSignIn(userEntity);
 }
 
 // document.getElementById("signoutLink").addEventListener("click", function signOut() {

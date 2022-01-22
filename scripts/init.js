@@ -89,6 +89,23 @@ function signOut() {
     document.querySelector(".userDetails").style.display = "none";
 
     document.querySelector(".signOut").style.display = "none";
+
+    var userSolveData = [];
+
+    function createSession(type, nameStr) {
+        let sessionTemp = {
+            type: type,
+            times: [],
+            scrambles: [],
+            name: nameStr
+        }
+
+        userSolveData.push(sessionTemp);
+    }
+
+    createSession("3x3", "Session 01");
+
+    localStorage.setItem("speedtimer", JSON.stringify(userSolveData));
 };
 
 function afterSignIn(userProfile) {

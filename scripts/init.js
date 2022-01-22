@@ -82,3 +82,9 @@ function afterSignIn(userProfile) {
 
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 }
+
+var script = document.createElement('script');
+script.src = "scripts/script.js";
+script.async = true;
+script.type = "module";
+document.body.appendChild(script);

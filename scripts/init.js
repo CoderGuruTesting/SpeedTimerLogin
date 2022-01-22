@@ -13,6 +13,19 @@ firebase.initializeApp(firebaseConfig);
 function writeUserData(googleProfile, userId, name, email, imageUrl) {
     var emptyArray = [];
 
+	function createSession(type, nameStr) {
+		let sessionTemp = {
+			type: type,
+			times: [],
+			scrambles: [],
+			name: nameStr
+		}
+
+		emptyArray.push(sessionTemp);
+	}
+
+	createSession("3x3", "Session 01");
+
     var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
         if (snapshot.exists()) {
             var speedtimerReference = firebase.database().ref('users/' + googleProfile.id + '/speedtimerData');

@@ -60,17 +60,9 @@ function setSpeedtimerData(userId, data) {
 function onSignIn(googleUser) {
     var profile = googleUser.getBasicProfile();
 
-    var userEntity = {
-        id: profile.getId(),
-        username: profile.getName(),
-        email: profile.getEmail(),
-        profile_picture: profile.getImageUrl(),
-    };
-
-    localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
     localStorage.setItem("signedIn", JSON.stringify(true));
 
-    afterSignIn(userEntity);
+    afterSignIn(googleUser.getBasicProfile());
 }
 
 //document.getElementById("signoutLink").addEventListener("click", 
@@ -90,13 +82,32 @@ function afterSignIn(userProfile) {
     document.querySelector(".loginUser").classList.remove("loggedout");
     document.querySelector(".loginUser").classList.add("loggedin");
 
-    document.querySelector(".userImg").style.backgroundImg = "url('" + googleProfile.profile_picture + "')";
-    
-    document.querySelector(".userName").innerHTML = googleProfile.name;
+    document.querySelector(".userImg").style.backgroundImage = "url('" + googleProfile.profile_picture + "')";
+    document.querySelector(".userImg").style.backgroundSize = "cover";
+
+    document.querySelector(".userName").innerHTML = googleProfile.username;
 
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 
-    location.reload();
+    var userEntity = {
+        id: profile.getId(),
+        username: profile.getName(),
+        email: profile.getEmail(),
+        profile_picture: profile.getImageUrl(),
+    };
+
+    localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
+
+    localStorage['firstLoad'] = userEntity.id;
+
+    if (!localStorage.getItem('firstLoad')) {
+        window.location.reload();
+    } else {
+        if(userEntity.id != localStorage.getItem('firstLoad')) {
+            window.location.reload();
+            localStorage['firstLoad'] = userEntity.id;
+        }
+    }
 }
 
 var script = document.createElement('script');

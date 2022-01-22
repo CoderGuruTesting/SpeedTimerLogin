@@ -29,28 +29,6 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
             });
         }
     });
-
-    // firebase.database().ref('users').child(googleProfile.id).once("value").then((snapshot) => {
-    //     if (snapshot.exists()) {
-    //         var speedtimerReference = firebase.database().ref('users/' + googleProfile.id + '/speedtimerData');
-    //         speedtimerReference.on('value', (snapshot) => {
-    //             const data = snapshot.val();
-    //             localStorage.setItem("speedtimer", JSON.parse(data));
-    //         });
-    //     } else {
-    //         let solveData;
-
-    //         if(localStorage.speedtimer != null) {
-    //             solveData = localStorage.getItem("speedtimer");
-    //         } else {
-    //             solveData = JSON.stringify([]);
-    //         }
-
-    //         firebase.database().ref('users/' + userId).set({
-    //             speedtimerData: solveData
-    //         });
-    //     }
-    // });
 }
 
 function setSpeedtimerData(userId, data) {
@@ -70,6 +48,7 @@ function onSignIn(googleUser) {
     };
 
     localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
+    localStorage.setItem("signedIn", JSON.stringify(true));
 
     afterSignIn(userEntity);
 }

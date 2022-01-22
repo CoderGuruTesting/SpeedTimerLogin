@@ -291,6 +291,9 @@ if (localStorage.getItem("speedtimer") == null) {
 
 	createSession("3x3", "Session 01");
 
+	if(JSON.parse(localStorage.getItem("signedIn"))) {
+		setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
+	}
 	localStorage.setItem("speedtimer", JSON.stringify(sessions));
 	localStorage.setItem("cur", JSON.stringify(0));
 } else {
@@ -571,6 +574,9 @@ document.onkeydown = function (e) {
 			sessions[currentSessionIdx].times[0] = sessions[currentSessionIdx].times[0].replace("DNF(", "").replace(")", "");
 			sessions[currentSessionIdx].times[0] = ("000000" + (parseInt(sessions[currentSessionIdx].times[0]) + 200)).slice(-6) + "+";
 		}
+		if(JSON.parse(localStorage.getItem("signedIn"))) {
+			setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
+		}
 		localStorage.setItem("speedtimer", JSON.stringify(sessions));
 		generateTimes();
 		generateStats();
@@ -585,6 +591,9 @@ document.onkeydown = function (e) {
 				sessions[currentSessionIdx].times[0] = sessions[currentSessionIdx].times[0].replace("+", "");
 			}
 			sessions[currentSessionIdx].times[0] = `DNF(${sessions[currentSessionIdx].times[0]})`;
+		}
+		if(JSON.parse(localStorage.getItem("signedIn"))) {
+			setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
 		}
 		localStorage.setItem("speedtimer", JSON.stringify(sessions));
 		generateTimes();
@@ -638,6 +647,9 @@ const mousePress = () => {
 	} else {
 		running = 0;
 		getTime();
+		if(JSON.parse(localStorage.getItem("signedIn"))) {
+			setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
+		}
 		localStorage.setItem("speedtimer", JSON.stringify(sessions));
 		generateScramble(sType);
 
@@ -708,6 +720,9 @@ document.body.onkeyup = function (e) {
 			} else if (running == 1) {
 				running = 0;
 				getTime();
+				if(JSON.parse(localStorage.getItem("signedIn"))) {
+					setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
+				}
 				localStorage.setItem("speedtimer", JSON.stringify(sessions));
 				generateScramble(sType);
 				timer.style.color = "white";
@@ -783,6 +798,9 @@ document.querySelector(".inputTime").addEventListener("change", function () {
 					sessions[currentSessionIdx].scrambles.unshift(JSON.parse(localStorage.getItem("scrambleTemp")));
 				} else {
 					sessions[currentSessionIdx].scrambles.unshift(localStorage.getItem("scrambleTemp"));
+				}
+				if(JSON.parse(localStorage.getItem("signedIn"))) {
+					setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
 				}
 				localStorage.setItem("speedtimer", JSON.stringify(sessions));
 
@@ -923,6 +941,9 @@ function getTime() {
 		sessions[currentSessionIdx].scrambles.unshift(JSON.parse(localStorage.getItem("scrambleTemp")));
 	} else {
 		sessions[currentSessionIdx].scrambles.unshift(localStorage.getItem("scrambleTemp"));
+	}
+	if(JSON.parse(localStorage.getItem("signedIn"))) {
+		setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
 	}
 	localStorage.setItem("speedtimer", JSON.stringify(sessions));
 
@@ -1102,6 +1123,9 @@ function deleteSolve() {
 		sessions[currentSessionIdx].times.splice(sessions[currentSessionIdx].times.length - parseInt(this.parentElement ?.parentElement.id ?? document.querySelector(".solves").childNodes[0].id) - 1, 1);
 		sessions[currentSessionIdx].scrambles.splice(sessions[currentSessionIdx].scrambles.length - parseInt(this.parentElement ?.parentElement.id ?? document.querySelector(".solves").childNodes[0].id) - 1, 1);
 
+		if(JSON.parse(localStorage.getItem("signedIn"))) {
+			setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
+		}
 		localStorage.setItem("speedtimer", JSON.stringify(sessions));
 
 		generateStats();
@@ -1229,6 +1253,9 @@ function runStackmat() {
 					sessions[currentSessionIdx].scrambles.unshift(JSON.parse(localStorage.getItem("scrambleTemp")));
 				} else {
 					sessions[currentSessionIdx].scrambles.unshift(localStorage.getItem("scrambleTemp"));
+				}
+				if(JSON.parse(localStorage.getItem("signedIn"))) {
+					setSpeedtimerData(JSON.parse(localStorage.getItem("myUserEntity")).id, JSON.stringify(sessions));
 				}
 				localStorage.setItem("speedtimer", JSON.stringify(sessions));
 

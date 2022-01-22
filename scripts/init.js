@@ -11,15 +11,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function writeUserData(googleProfile, userId, name, email, imageUrl) {
-    // var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
-    //     if (snapshot.exists()) {
-            
-    //     } else {
-            
-    //     }
-    // });
+    var emptyArray = [];
 
-    firebase.database().ref('users').child(googleProfile.id).once("value").then((snapshot) => {
+    var check = firebase.database().ref('users').orderByKey().equalTo(googleProfile.id).once("value", function (snapshot) {
         if (snapshot.exists()) {
             var speedtimerReference = firebase.database().ref('users/' + googleProfile.id + '/speedtimerData');
             speedtimerReference.on('value', (snapshot) => {
@@ -27,25 +21,36 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
                 localStorage.setItem("speedtimer", JSON.parse(data));
             });
         } else {
-            let solveData;
-
-            if(localStorage.speedtimer != null) {
-                solveData = localStorage.getItem("speedtimer");
-            } else {
-                solveData = JSON.stringify([]);
-            }
-
             firebase.database().ref('users/' + userId).set({
-                speedtimerData: solveData
+                username: name,
+                email: email,
+                profile_picture: imageUrl,
+                speedtimerData: JSON.stringify(emptyArray)
             });
         }
     });
 
-    firebase.database().ref('users/' + userId).set({
-        username: name,
-        email: email,
-        profile_picture: imageUrl,
-    });
+    // firebase.database().ref('users').child(googleProfile.id).once("value").then((snapshot) => {
+    //     if (snapshot.exists()) {
+    //         var speedtimerReference = firebase.database().ref('users/' + googleProfile.id + '/speedtimerData');
+    //         speedtimerReference.on('value', (snapshot) => {
+    //             const data = snapshot.val();
+    //             localStorage.setItem("speedtimer", JSON.parse(data));
+    //         });
+    //     } else {
+    //         let solveData;
+
+    //         if(localStorage.speedtimer != null) {
+    //             solveData = localStorage.getItem("speedtimer");
+    //         } else {
+    //             solveData = JSON.stringify([]);
+    //         }
+
+    //         firebase.database().ref('users/' + userId).set({
+    //             speedtimerData: solveData
+    //         });
+    //     }
+    // });
 }
 
 function setSpeedtimerData(userId, data) {

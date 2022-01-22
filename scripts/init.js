@@ -11,7 +11,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 function writeUserData(googleProfile, userId, name, email, imageUrl) {
-    var emptyArray = [];
+    var userSolveData = [];
 
 	function createSession(type, nameStr) {
 		let sessionTemp = {
@@ -21,7 +21,7 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
 			name: nameStr
 		}
 
-		emptyArray.push(sessionTemp);
+		userSolveData.push(sessionTemp);
 	}
 
 	createSession("3x3", "Session 01");
@@ -34,6 +34,10 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
                 localStorage.setItem("speedtimer", JSON.parse(data));
             });
         } else {
+            if(localStorage.getItem("speedtimer") != null) {
+                userSolveData = JSON.parse(localStorage.getItem("speedtimer"));
+            }
+
             firebase.database().ref('users/' + userId).set({
                 username: name,
                 email: email,

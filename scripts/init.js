@@ -32,7 +32,7 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
             speedtimerReference.on('value', (snapshot) => {
                 const data = snapshot.val();
                 console.log(data);
-                console.log(JSON.parse(data));
+                console.log(JSON.stringify(JSON.parse(data)));
                 localStorage.setItem("speedtimer", JSON.parse(data));
             });
         } else {

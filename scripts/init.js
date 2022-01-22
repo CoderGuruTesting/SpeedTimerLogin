@@ -70,10 +70,10 @@ function onSignIn(googleUser) {
     afterSignIn(userEntity);
 }
 
-function generateUserdata() {
+document.querySelector(".g-signin2").addEventListener("click", function generateUserdata() {
     generateTimes();
 	generateStats();
-}
+});
 
 // document.getElementById("signoutLink").addEventListener("click", function signOut() {
 //     var auth2 = gapi.auth2.getAuthInstance();

@@ -82,6 +82,8 @@ function signOut() {
 
     document.querySelector(".loginUser").classList.remove("loggedin");
     document.querySelector(".loginUser").classList.add("loggedout");
+
+    document.querySelector(".userDetails").style.display = "none";
 };
 
 function afterSignIn(userProfile) {
@@ -89,6 +91,8 @@ function afterSignIn(userProfile) {
 
     document.querySelector(".loginUser").classList.remove("loggedout");
     document.querySelector(".loginUser").classList.add("loggedin");
+
+    document.querySelector(".userDetails").style.display = "flex";
 
     document.querySelector(".userImg").style.backgroundImage = "url('" + googleProfile.profile_picture + "')";
     document.querySelector(".userImg").style.backgroundSize = "cover";

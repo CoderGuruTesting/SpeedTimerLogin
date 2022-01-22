@@ -92,7 +92,7 @@ script.async = true;
 script.type = "module";
 document.body.appendChild(script);
 
-document.querySelector(".g-signin2").addEventListener("click", function generateUserdata() {
+document.querySelector(".g-signin2").addEventListener("data-onsuccess", function generateUserdata() {
     generateTimes();
     generateStats();
 });

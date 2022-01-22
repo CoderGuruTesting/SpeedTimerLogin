@@ -68,10 +68,9 @@ function onSignIn(googleUser) {
     };
 
     localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
-
     localStorage.setItem("signedIn", JSON.stringify(true));
 
-    afterSignIn(googleUser.getBasicProfile());
+    afterSignIn(userEntity);
 }
 
 //document.getElementById("signoutLink").addEventListener("click", 
@@ -98,8 +97,6 @@ function afterSignIn(userProfile) {
 
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 
-    localStorage['firstLoad'] = userProfile.id;
-
     if (!localStorage.getItem('firstLoad')) {
         window.location.reload();
     } else {
@@ -107,7 +104,7 @@ function afterSignIn(userProfile) {
             window.location.reload();
             localStorage['firstLoad'] = userProfile.id;
         }
-    }
+    }  
 }
 
 var script = document.createElement('script');

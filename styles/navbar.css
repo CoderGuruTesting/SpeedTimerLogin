@@ -175,3 +175,7 @@
     align-items: center;
     margin: 10px;
 }
+
+.loginUser {
+    display: none;
+}

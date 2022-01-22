@@ -84,6 +84,8 @@ function afterSignIn(userProfile) {
     var googleProfile = userProfile;
 
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
+
+    location.reload();
 }
 
 var script = document.createElement('script');
@@ -97,8 +99,3 @@ script.src = "scripts/script.js";
 script.async = true;
 script.type = "module";
 document.body.appendChild(script);
-
-document.querySelector(".g-signin2").addEventListener("data-onsuccess", function generateUserdata() {
-    generateTimes();
-    generateStats();
-});

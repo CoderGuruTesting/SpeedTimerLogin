@@ -93,6 +93,23 @@
 	</div>
 	</div>
 
+	<script>
+		const firebaseConfig = {
+			apiKey: "AIzaSyDqcNp6emfuSO6NI02XqVieQqjXLQInZ4I",
+			authDomain: "speedtimer-2.firebaseapp.com",
+			databaseURL: "https://speedtimer-2-default-rtdb.firebaseio.com",
+			projectId: "speedtimer-2",
+			storageBucket: "speedtimer-2.appspot.com",
+			messagingSenderId: "180745090172",
+			appId: "1:180745090172:web:588dc6489bae5c2e1ac5f9"
+		};
+
+		firebase.initializeApp(firebaseConfig);
+
+		var storage = firebase.storage();
+		var storageRef = storage.ref();
+	</script>
+
 	<script src="scripts/cubeslistDb2x2.js" async></script>
 	<script src="scripts/cubeslistDb3x3.js" async></script>
 	<script src="scripts/cubeslistDb4x4.js" async></script>

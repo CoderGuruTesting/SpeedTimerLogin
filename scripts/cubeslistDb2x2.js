@@ -8,7 +8,7 @@ var cubesTwo = [
         Price: "$18.99",
         Rating: "9/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/dayan-tengyun-2x2x2-m/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/dayanm.jpeg"
+        Img: storageRef.child('cublesist/dayanm.jpeg')
     },
     {
         Name: "GAN 249 V2",
@@ -19,7 +19,7 @@ var cubesTwo = [
         Price: "$15.99",
         Rating: "6/10",
         Link: "none",
-        Img: "cubeslist/gan249v2.jpeg"
+        Img: storageRef.child('cubeslist/gan249v2.jpeg')
     },
     {
         Name: "GAN 249 V2 M",
@@ -30,7 +30,7 @@ var cubesTwo = [
         Price: "$22.99",
         Rating: "7/10",
         Link: "none",
-        Img: "cubeslist/gan249v2m.jpeg"
+        Img: storageRef.child('cubesilst/gan249v2m.jpeg')
     },
     {
         Name: "GAN 251 M",
@@ -41,7 +41,7 @@ var cubesTwo = [
         Price: "$21.99",
         Rating: "8/10",
         Link: "none",
-        Img: "cubeslist/gan251m.jpeg"
+        Img: storageRef.child('cubelsist/gan251m.jpeg')
     },
     {
         Name: "GAN 251 M Explorer",
@@ -52,7 +52,7 @@ var cubesTwo = [
         Price: "$29.99",
         Rating: "9/10",
         Link: "none",
-        Img: "cubeslist/gan251ex.jpeg"
+        Img: storageRef.child('cubeslist/gan251ex.jpeg')
     },
     {
         Name: "Qiyi MS",
@@ -63,7 +63,7 @@ var cubesTwo = [
         Price: "$6.99",
         Rating: "7/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/qiyi-ms-2x2x2/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/qiyims2.jpeg"
+        Img: storageRef.child('cubelsist/qiyims2.jpeg')
     },
     {
         Name: "Qiyi Valk 2 LM",
@@ -74,7 +74,7 @@ var cubesTwo = [
         Price: "$19.99",
         Rating: "8/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/qiyi-valk-2m/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/valklm.jpeg"
+        Img: storageRef.child('cublesist/valklm.jpeg')
     },
     {
         Name: "Qiyi Valk 2 M",
@@ -85,7 +85,7 @@ var cubesTwo = [
         Price: "$19.99",
         Rating: "9/10",
         Link: "none",
-        Img: "cubeslist/valk2.jpeg"
+        Img: storageRef.child('culbesist/valk2.jpeg')
     },
     {
         Name: "X-Man Flare M",
@@ -96,7 +96,7 @@ var cubesTwo = [
         Price: "$16.99",
         Rating: "99/10",
         Link: "none",
-        Img: "cubeslist/xman2.jpeg"
+        Img: storageRef.child('culbesist/xman2.jpeg')
     },
     {
         Name: "YJ MGC",
@@ -107,7 +107,7 @@ var cubesTwo = [
         Price: "$9.99",
         Rating: "7/10",
         Link: "none",
-        Img: "cubeslist/yjmgc.jpeg"
+        Img: storageRef.child('culbesist/yjmgc.jpeg')
     },
     {
         Name: "YJ MGC Elite",
@@ -118,7 +118,7 @@ var cubesTwo = [
         Price: "$19.99",
         Rating: "9/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/yj-mgc-2x2x2-elite/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/yjmgcel.jpeg"
+        Img: storageRef.child('cubelsist/yjmgcel.jpeg')
     },
     {
         Name: "Yj YuPo V2 M",
@@ -129,7 +129,7 @@ var cubesTwo = [
         Price: "$6.99",
         Rating: "6/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/yj-yupo-v2m/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/yupo2.jpeg"
+        Img: storageRef.child('culbesist/yupo2.jpeg')
     },
     {
         Name: "Yuxin Little Magic",
@@ -140,7 +140,7 @@ var cubesTwo = [
         Price: "$4.99",
         Rating: "6/10",
         Link: "none",
-        Img: "cubeslist/yuxinlm2.jpeg"
+        Img: storageRef.child('cubeslist/yuxinlm2.jpeg')
     },
     {
         Name: "Yuxin Little Magic M",
@@ -151,7 +151,7 @@ var cubesTwo = [
         Price: "$6.99",
         Rating: "8/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/yuxin-little-magic-2x2x2-m/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/yuxinlmm.jpeg"
+        Img: storageRef.child('cubeslist/yuxinlmm.jpeg')
     },
     {
         Name: "Gan 251 M Leap",
@@ -162,7 +162,7 @@ var cubesTwo = [
         Price: "$39.99",
         Rating: "9/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/gan-251-m-leap/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/251mleap.jpeg"
+        Img: storageRef.child('cubeslist/251mleap.jpeg')
     },
     {
         Name: "Moyu Weipo WRS",
@@ -173,7 +173,7 @@ var cubesTwo = [
         Price: "$14.99",
         Rating: "7/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/weipo-wrm/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/weipowrs.jpeg"
+        Img: storageRef.child('cubeslist/weipowrs.jpeg')
     },
     {
         Name: "Diansheng Solar S",
@@ -184,7 +184,7 @@ var cubesTwo = [
         Price: "$9.99",
         Rating: "7/10",
         Link: "none",
-        Img: "cubeslist/solars.jpeg"
+        Img: storageRef.child('cublesist/solars.jpeg')
     },
     {
         Name: "GAN 251 M Pro",
@@ -195,7 +195,7 @@ var cubesTwo = [
         Price: "$32.99",
         Rating: "9/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/gan-251-m-pro/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/251mpro.jpeg"
+        Img: storageRef.child('cubelsist/251mpro.jpeg')
     },
     {
         Name: "GAN 251 M Air",
@@ -206,7 +206,7 @@ var cubesTwo = [
         Price: "$23.99",
         Rating: "8/10",
         Link: "https://speedcubing.org/collections/2x2x2/products/gan-251-m-air/?sca_ref=1249093.DLjOmDm1Z6",
-        Img: "cubeslist/251mair.jpeg"
+        Img: storageRef.child('cubelsist/251mair.jpeg')
     },
 ];
 

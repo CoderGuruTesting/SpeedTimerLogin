@@ -37,7 +37,7 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
                 localStorage.setItem("speedtimer", JSON.stringify(JSON.parse(data)));
             });
         } else {
-            if (localStorage.getItem("speedtimer") != null && localStorage.getItem("signedIn") != true) {
+            if (localStorage.getItem("speedtimer") != null && localStorage.getItem("signedIn") != "true") {
                 userSolveData = JSON.parse(localStorage.getItem("speedtimer"));
             }
 

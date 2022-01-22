@@ -62,7 +62,7 @@ function onSignIn(googleUser) {
 
     localStorage.setItem("signedIn", JSON.stringify(true));
 
-    afterSignIn(googleUser.getBasicProfile());
+    afterSignIn(profile);
 }
 
 //document.getElementById("signoutLink").addEventListener("click", 
@@ -90,10 +90,10 @@ function afterSignIn(userProfile) {
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture);
 
     var userEntity = {
-        id: profile.getId(),
-        username: profile.getName(),
-        email: profile.getEmail(),
-        profile_picture: profile.getImageUrl(),
+        id: userProfile.getId(),
+        username: userProfile.getName(),
+        email: userProfile.getEmail(),
+        profile_picture: userProfile.getImageUrl(),
     };
 
     localStorage.setItem('myUserEntity', JSON.stringify(userEntity));

@@ -230,7 +230,7 @@
 
     background-color: var(--blue);
 
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }

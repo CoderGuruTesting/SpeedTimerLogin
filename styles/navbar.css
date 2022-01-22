@@ -212,3 +212,25 @@
 
     font-size: 18px;
 }
+
+.signOut {
+    padding: 10px;
+
+    margin: 15px;
+    margin-top: -5px;
+
+    font-size: 90%;
+
+    border-radius: 15px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    cursor: pointer;
+
+    background-color: var(--blue);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

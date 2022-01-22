@@ -42,7 +42,7 @@ function writeUserData(googleProfile, userId, name, email, imageUrl) {
                 username: name,
                 email: email,
                 profile_picture: imageUrl,
-                speedtimerData: JSON.stringify(emptyArray)
+                speedtimerData: JSON.stringify(userSolveData)
             });
         }
     });

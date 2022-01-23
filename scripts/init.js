@@ -127,6 +127,18 @@ function afterSignIn(userProfile) {
 
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture); 
     
+    var script = document.createElement('script');
+    script.src = "scripts/defaults.js";
+    script.async = true;
+    script.type = "module";
+    document.body.appendChild(script);
+
+    var script = document.createElement('script');
+    script.src = "scripts/script.js";
+    script.async = true;
+    script.type = "module";
+    document.body.appendChild(script);
+    
     if (!localStorage.getItem('firstLoad')) {
         localStorage['firstLoad'] = userProfile.id;
 
@@ -137,14 +149,24 @@ function afterSignIn(userProfile) {
     }
 }
 
-var script = document.createElement('script');
-script.src = "scripts/defaults.js";
-script.async = true;
-script.type = "module";
-document.body.appendChild(script);
+function isMyScriptLoaded(url) {
+    var scripts = document.getElementsByTagName('script');
+    for (var i = scripts.length; i--;) {
+        if (scripts[i].src == url) return true;
+    }
+    return false;
+}
 
-var script = document.createElement('script');
-script.src = "scripts/script.js";
-script.async = true;
-script.type = "module";
-document.body.appendChild(script);
+if(localStorage.getItem("signedIn") != "true") {
+    var script = document.createElement('script');
+    script.src = "scripts/defaults.js";
+    script.async = true;
+    script.type = "module";
+    document.body.appendChild(script);
+
+    var script = document.createElement('script');
+    script.src = "scripts/script.js";
+    script.async = true;
+    script.type = "module";
+    document.body.appendChild(script);
+}

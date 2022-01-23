@@ -147,11 +147,12 @@ function afterSignIn(userProfile) {
     if (!localStorage.getItem('firstLoad')) {
         localStorage['firstLoad'] = userProfile.id;
 
-        // window.location.reload();
-        document.title = "pls refresh"
+        document.getElementById("overlay3").style.display = "block";
+        document.getElementById("refresh").style.display = "flex";
     } else if(userProfile.id != localStorage.getItem('firstLoad')) {
-        // window.location.reload();
-        document.title = "pls refresh"
+        document.getElementById("overlay3").style.display = "block";
+        document.getElementById("refresh").style.display = "flex";
+
         localStorage['firstLoad'] = userProfile.id;
     }
 }

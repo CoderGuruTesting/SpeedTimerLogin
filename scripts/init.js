@@ -68,7 +68,6 @@ function onSignIn(googleUser) {
     };
 
     localStorage.setItem('myUserEntity', JSON.stringify(userEntity));
-    localStorage.setItem("signedIn", JSON.stringify(true));
 
     afterSignIn(userEntity);
 }
@@ -128,6 +127,8 @@ function afterSignIn(userProfile) {
     document.querySelector(".userImg").style.backgroundSize = "cover";
 
     document.querySelector(".userName").innerHTML = googleProfile.username;
+
+    localStorage.setItem("signedIn", JSON.stringify(true));
 
     writeUserData(googleProfile, googleProfile.id, googleProfile.username, googleProfile.email, googleProfile.profile_picture); 
     

@@ -105,6 +105,8 @@ function signOut() {
 
     localStorage.setItem("loggedIn", JSON.stringify(false));
 
+    localStorage['firstLoad'] = JSON.stringify(69696969696969696969696969);
+
     createSession("3x3", "Session 01");
 
     localStorage.setItem("speedtimer", JSON.stringify(userSolveData));

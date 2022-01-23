@@ -102,7 +102,7 @@ function signOut() {
         userSolveData.push(sessionTemp);
     }
 
-    localStorage.setItem("loggedIn", JSON.stringify(false));
+    localStorage.setItem("signedIn", JSON.stringify(false));
 
     localStorage['firstLoad'] = JSON.stringify(69696969696969696969696969);
 

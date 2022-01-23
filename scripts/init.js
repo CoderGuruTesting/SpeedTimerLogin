@@ -144,14 +144,16 @@ function afterSignIn(userProfile) {
     script.type = "module";
     document.body.appendChild(script);
     
-    if (!localStorage.getItem('firstLoad')) {
-        localStorage['firstLoad'] = userProfile.id;
+    // if (!localStorage.getItem('firstLoad')) {
+    //     localStorage['firstLoad'] = userProfile.id;
 
-        window.location.reload();
-    } else if(userProfile.id != localStorage.getItem('firstLoad')) {
-        window.location.reload();
-        localStorage['firstLoad'] = userProfile.id;
-    }
+    //     window.location.reload();
+    // } else if(userProfile.id != localStorage.getItem('firstLoad')) {
+    //     window.location.reload();
+    //     localStorage['firstLoad'] = userProfile.id;
+    // }
+
+    alert("reload")
 }
 
 function isMyScriptLoaded(url) {

@@ -153,7 +153,7 @@ function afterSignIn(userProfile) {
     //     localStorage['firstLoad'] = userProfile.id;
     // }
 
-    alert("reload")
+    alert("Please Refresh")
 }
 
 function isMyScriptLoaded(url) {

@@ -103,6 +103,8 @@ function signOut() {
         userSolveData.push(sessionTemp);
     }
 
+    localStorage.setItem("loggedIn", JSON.stringify(false));
+
     createSession("3x3", "Session 01");
 
     localStorage.setItem("speedtimer", JSON.stringify(userSolveData));
